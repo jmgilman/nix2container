@@ -5,7 +5,7 @@ let
   nix2containerUtil = pkgs.buildGoModule rec {
     pname = "nix2container";
     version = "0.0.1";
-    doCheck = true;
+    doCheck = false;
     src = l.cleanSourceWith {
       src = ./.;
       filter = path: type:
