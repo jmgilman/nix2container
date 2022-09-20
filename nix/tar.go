@@ -94,10 +94,10 @@ func appendFileToTar(tw *tar.Writer, tarHeaders *tarHeaders, path string, info o
 	if hdr.Name == "" {
 		return nil
 	}
-	hdr.Uid = 0
-	hdr.Gid = 0
-	hdr.Uname = "root"
-	hdr.Gname = "root"
+	hdr.Uid = 1000
+	hdr.Gid = 1000
+	hdr.Uname = "user"
+	hdr.Gname = "user"
 
 	// Force symlink permissions to match Linux ones
 	// see https://github.com/nlewo/nix2container/issues/23
